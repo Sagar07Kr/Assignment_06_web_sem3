@@ -1,0 +1,15 @@
+const express = require('express');
+const router = express.Router();
+
+const { getDashboardMetrics } = require('../controllers/dashboardController');
+const authHandler = require('../middlewares/authHandler');
+const allowRoles = require('../middlewares/allowRoles');
+
+router.get(
+  '/',
+  authHandler,
+  allowRoles('admin'),
+  getDashboardMetrics
+);
+
+module.exports = router;
