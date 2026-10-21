@@ -15,10 +15,10 @@ function Navbar({ user, logout }) {
           nav {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 14px;
             padding: 16px 28px;
             background: #12372A;
-            color: #ffffff;
+            color: rgba(255, 255, 255, 0.35);
             font-family: Arial, sans-serif;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
             flex-wrap: wrap;
@@ -26,12 +26,13 @@ function Navbar({ user, logout }) {
 
           nav a {
             color: #ffffff;
+            font-size: 16px;
             text-decoration: none;
             font-weight: 600;
             transition: 0.2s ease;
           }
 
-          nav a:first-child {
+          nav a:first-of-type {
             font-size: 22px;
             color: #F28C28;
             margin-right: 8px;
@@ -66,12 +67,12 @@ function Navbar({ user, logout }) {
           @media (max-width: 600px) {
             nav {
               padding: 14px 18px;
-              gap: 12px;
+              gap: 10px;
             }
 
-            nav a:first-child {
-              width: 100%;
-              margin-bottom: 4px;
+            nav a:first-of-type {
+              font-size: 20px;
+              margin-right: 4px;
             }
           }
         `}

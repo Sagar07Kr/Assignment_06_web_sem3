@@ -22,103 +22,118 @@ function HomePage() {
     <div>
       <style>
         {`
-          div {
+          #root > div > div {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             max-width: 1100px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #F5F7F4;
-            border-radius: 18px;
+            margin: 0 auto;
+            padding: 40px 24px;
             font-family: Arial, sans-serif;
           }
 
-          h1 {
-            margin: 0 0 16px;
+          #root > div > div > h1,
+          #root > div > div > p,
+          #root > div > div > div:first-of-type,
+          #root > div > div > hr,
+          #root > div > div > h2 {
+            grid-column: 1 / -1;
+          }
+
+          #root > div > div > h1 {
+            margin: 0;
             color: #12372A;
             font-size: 40px;
             line-height: 1.2;
           }
 
-          div > p {
+          #root > div > div > p {
+            margin: 0;
             color: #4b5563;
             font-size: 17px;
             line-height: 1.7;
-            margin-bottom: 25px;
           }
 
-          div > div {
-            max-width: none;
-            margin: 0;
-            padding: 0;
-            background: transparent;
+          #root > div > div > div:first-of-type {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0;
           }
 
-          div > div a {
+          #root > div > div > div:first-of-type a {
             display: inline-block;
-            margin: 5px 4px;
             padding: 11px 20px;
             background: #F28C28;
             color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
             text-decoration: none;
             border-radius: 8px;
-            font-weight: 600;
             transition: 0.2s ease;
           }
 
-          div > div a:hover {
+          #root > div > div > div:first-of-type a:hover {
             background: #d97706;
             transform: translateY(-1px);
           }
 
-          hr {
-            margin: 35px 0;
+          #root > div > div > hr {
+            width: 100%;
+            margin: 10px 0;
             border: none;
             border-top: 1px solid #d9dfda;
           }
 
-          h2 {
-            margin-bottom: 22px;
+          #root > div > div > h2 {
+            margin: 0;
             color: #12372A;
             font-size: 28px;
           }
 
-          div > div > div {
-            max-width: none;
-            margin: 16px 0;
+          #root > div > div > h2 ~ div {
             padding: 22px;
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 14px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            transition: 0.2s ease;
           }
 
-          h3 {
+          #root > div > div > h2 ~ div:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+          }
+
+          #root > div > div > h2 ~ div h3 {
             margin: 0 0 10px;
             color: #12372A;
             font-size: 21px;
           }
 
-          div > div > div p {
+          #root > div > div > h2 ~ div p {
             margin: 0;
             color: #4b5563;
-            line-height: 1.6;
             font-size: 15px;
+            line-height: 1.6;
           }
 
-          @media (max-width: 600px) {
-            div {
-              margin: 20px 12px;
-              padding: 25px 20px;
+          @media (max-width: 700px) {
+            #root > div > div {
+              grid-template-columns: 1fr;
+              gap: 16px;
+              padding: 24px 16px;
             }
 
-            h1 {
+            #root > div > div > h1 {
               font-size: 30px;
             }
 
-            h2 {
+            #root > div > div > h2 {
               font-size: 24px;
             }
 
-            div > div a {
+            #root > div > div > div:first-of-type a {
               padding: 10px 15px;
             }
           }

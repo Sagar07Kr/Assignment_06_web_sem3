@@ -46,7 +46,7 @@ function RegisterPage({ onRegister }) {
     <div>
       <style>
         {`
-          div {
+          #root > div > div {
             max-width: 460px;
             margin: 50px auto;
             padding: 35px;
@@ -57,18 +57,20 @@ function RegisterPage({ onRegister }) {
             font-family: Arial, sans-serif;
           }
 
-          h1 {
-            margin: 0 0 10px;
+          #root > div > div > h1 {
+            margin: 0 0 8px;
             color: #12372A;
-            font-size: 34px;
+            font-size: 32px;
           }
 
-          div > p {
+          #root > div > div > p {
+            margin: 0;
             color: #4b5563;
             line-height: 1.6;
           }
 
-          div > p:nth-of-type(2) {
+          #root > div > div > h1 + p + p {
+            margin-top: 16px;
             padding: 10px 14px;
             background: #fff1f1;
             color: #D62828;
@@ -77,79 +79,84 @@ function RegisterPage({ onRegister }) {
             font-weight: 600;
           }
 
-          form {
-            margin-top: 25px;
+          #root > div > div form {
+            margin: 24px 0;
           }
 
-          form > div {
-            max-width: none;
-            margin: 0;
-            padding: 0;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
+          #root > div > div form br {
+            display: none;
           }
 
-          label {
-            display: inline-block;
+          #root > div > div form > div {
+            margin-bottom: 18px;
+          }
+
+          #root > div > div label {
+            display: block;
             margin-bottom: 8px;
             color: #12372A;
+            font-size: 14px;
             font-weight: 600;
           }
 
-          input {
+          #root > div > div input {
             width: 100%;
-            box-sizing: border-box;
             padding: 12px 14px;
             border: 1px solid #cbd5e1;
             border-radius: 8px;
+            font-family: inherit;
             font-size: 15px;
             outline: none;
             transition: 0.2s ease;
           }
 
-          input:focus {
+          #root > div > div input:focus {
             border-color: #38BDF8;
             box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
           }
 
-          button {
+          #root > div > div button {
             width: 100%;
             padding: 12px;
             border: none;
             border-radius: 8px;
             background: #F28C28;
             color: #ffffff;
+            font-family: inherit;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.2s ease;
           }
 
-          button:hover {
+          #root > div > div button:hover {
             background: #d97706;
             transform: translateY(-1px);
           }
 
-          a {
+          #root > div > div > form ~ p {
+            margin: 0 0 8px;
+            text-align: center;
+          }
+
+          #root > div > div a {
             color: #12372A;
             font-weight: 600;
             text-decoration: none;
           }
 
-          a:hover {
+          #root > div > div a:hover {
             color: #38BDF8;
           }
 
           @media (max-width: 600px) {
-            div {
-              margin: 30px 15px;
+            #root > div > div {
+              margin: 30px 16px;
               padding: 25px 20px;
             }
 
-            h1 {
-              font-size: 30px;
+            #root > div > div > h1 {
+              font-size: 28px;
             }
           }
         `}

@@ -22,50 +22,66 @@ function CoursesPage() {
     <div>
       <style>
         {`
-          div {
+          #root > div > div {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             max-width: 1100px;
-            margin: 40px auto;
-            padding: 30px;
-            background: #F5F7F4;
-            border-radius: 16px;
+            margin: 0 auto;
+            padding: 40px 24px;
             font-family: Arial, sans-serif;
           }
 
-          h1 {
-            margin: 0 0 10px;
-            color: #12372A;
-            font-size: 36px;
+          #root > div > div > h1,
+          #root > div > div > p,
+          #root > div > div > a {
+            grid-column: 1 / -1;
           }
 
-          div > p {
-            margin-bottom: 30px;
+          #root > div > div > h1 {
+            margin: 0;
+            color: #12372A;
+            font-size: 36px;
+            line-height: 1.2;
+          }
+
+          #root > div > div > p {
+            margin: 0 0 10px;
             color: #6b7280;
             font-size: 16px;
           }
 
-          div > div {
-            max-width: none;
-            margin: 20px 0;
+          #root > div > div > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             padding: 24px;
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 14px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            transition: 0.2s ease;
           }
 
-          h2 {
+          #root > div > div > div:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+          }
+
+          #root > div > div > div h2 {
             margin: 0 0 12px;
             color: #12372A;
             font-size: 23px;
           }
 
-          div > div p {
+          #root > div > div > div p {
+            flex: 1;
+            margin: 0 0 18px;
             color: #4b5563;
             line-height: 1.6;
-            margin-bottom: 18px;
           }
 
-          div > div a {
+          #root > div > div > div a {
             display: inline-block;
             padding: 10px 18px;
             background: #F28C28;
@@ -76,20 +92,18 @@ function CoursesPage() {
             transition: 0.2s ease;
           }
 
-          div > div a:hover {
+          #root > div > div > div a:hover {
             background: #d97706;
             transform: translateY(-1px);
           }
 
-          hr {
-            margin-top: 22px;
-            border: none;
-            border-top: 1px solid #e5e7eb;
+          #root > div > div > div hr {
+            display: none;
           }
 
-          div > a:last-child {
-            display: inline-block;
-            margin-top: 20px;
+          #root > div > div > a {
+            justify-self: start;
+            margin-top: 10px;
             padding: 11px 20px;
             background: #12372A;
             color: #ffffff;
@@ -99,21 +113,22 @@ function CoursesPage() {
             transition: 0.2s ease;
           }
 
-          div > a:last-child:hover {
+          #root > div > div > a:hover {
             background: #1b513d;
           }
 
-          @media (max-width: 600px) {
-            div {
-              margin: 20px 12px;
-              padding: 20px;
+          @media (max-width: 700px) {
+            #root > div > div {
+              grid-template-columns: 1fr;
+              gap: 16px;
+              padding: 24px 16px;
             }
 
-            h1 {
+            #root > div > div > h1 {
               font-size: 30px;
             }
 
-            div > div {
+            #root > div > div > div {
               padding: 20px;
             }
           }

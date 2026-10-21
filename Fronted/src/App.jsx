@@ -61,10 +61,20 @@ function App() {
     <div>
       <style>
         {`
-          div {
-            min-height: 100vh;
+          * {
+            box-sizing: border-box;
+          }
+
+          body {
             margin: 0;
             padding: 0;
+            background: #F5F7F4;
+          }
+
+          #root > div {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0 0 40px;
             background: #F5F7F4;
             font-family: Arial, sans-serif;
             color: #12372A;
@@ -76,7 +86,7 @@ function App() {
           }
 
           @media (max-width: 600px) {
-            div {
+            #root > div {
               width: 100%;
               overflow-x: hidden;
             }
