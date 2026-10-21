@@ -59,6 +59,31 @@ function App() {
 
   return (
     <div>
+      <style>
+        {`
+          div {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #F5F7F4;
+            font-family: Arial, sans-serif;
+            color: #12372A;
+          }
+
+          nav {
+            box-sizing: border-box;
+            width: 100%;
+          }
+
+          @media (max-width: 600px) {
+            div {
+              width: 100%;
+              overflow-x: hidden;
+            }
+          }
+        `}
+      </style>
+
       <Navbar user={user} logout={logout} />
 
       <Routes>
